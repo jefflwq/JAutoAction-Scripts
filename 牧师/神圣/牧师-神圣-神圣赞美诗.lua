@@ -1,0 +1,14 @@
+--牧师-神圣-神圣赞美诗
+--if not SwitchIsOn("输出爆发") then
+--    return
+--end
+--if not #神圣赞美诗#:ReadyIn(0.2) then
+--    return 
+--end
+--local percent, countAll, countLower, min, max = GetFriendsHealth(40, 0.6)
+--if countAll > 7 and countLower > 4 then
+--    return #神圣赞美诗#
+--end
+--if countAll <= 7 and countLower > 2 then
+--    return #神圣赞美诗#
+--end

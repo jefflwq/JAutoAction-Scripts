@@ -1,0 +1,9 @@
+--全职业-全专精-远程拾取器
+--if InCombatLockdown() then
+--    return
+--end
+--if @远程拾取器@:ReadyIn(0.2) then
+--    return @远程拾取器@
+--end
+--print("远程拾取器")
+--return 9
