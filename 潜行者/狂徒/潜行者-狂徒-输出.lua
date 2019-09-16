@@ -22,7 +22,8 @@ end
 v = CastOnTarget(#毒刃#, UnitIsPlayer("target")) if v then return v end
 
 v = CastOnTarget(#死亡标记#, vars["连击点差"] > 3 and talent["死亡标记"]) if v then return v end
-v = CastNoTarget(#剑刃乱舞#, SwitchIsOn("剑刃乱舞") and not player.Buff:Has("剑刃乱舞") and vars["附近敌人数量"] > 1) if v then return v end
+vars["剑刃乱舞中"] = player.Buff:Has("剑刃乱舞")
+v = CastNoTarget(#剑刃乱舞#, SwitchIsOn("剑刃乱舞") and not vars["剑刃乱舞中"] and vars["附近敌人数量"] > 1) if v then return v end
 
 
 vars["能量差"] = player:GetPowerDeficit(@能量@)

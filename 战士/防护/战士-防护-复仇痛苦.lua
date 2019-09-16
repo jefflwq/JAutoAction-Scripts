@@ -35,4 +35,5 @@ if talent["报复"] then
     end
 end
 v = run("无视苦痛", nq) if v then return v end
-v = AoeFront(#复仇#, 5, 180, 10, 0.65, 3, 1, targetRange < 5 and vars["怒气"] >= (nq + (vars["报复：复仇"] and 20 or 30))) if v then return v end
+v = AoeFront(#复仇#, 5, 180, 10, 0.65, 3, 1, vars["怒气"] >= (nq + (vars["报复：复仇"] and 20 or 30))) if v then return v end
+--v = AoeFront(#复仇#, 5, 180, 10, 0.65, 3, 1, targetRange < 5 and vars["怒气"] >= (nq + (vars["报复：复仇"] and 20 or 30))) if v then return v end

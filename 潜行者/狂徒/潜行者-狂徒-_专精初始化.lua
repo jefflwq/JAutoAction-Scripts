@@ -10,9 +10,11 @@ vars["命运骨骰Buff"] =
     "埋藏的宝藏",   --每秒能量恢复提高4点
     "精准定位",        --终结技会使你的许多技能冷却时间缩短，每花费一个连击点数可缩短1秒。
 }
+
 --AddCommonSwitch("AOE", "JAOE", "剑刃乱舞")
 AddPriorMacro("正中眉心")
 AddPriorMacro("冲动")
+AddPriorMacro("剑刃乱舞")
 AddSpellSwitch("剑刃乱舞", nil, "剑舞")
 AddSpellSwitch("消失")
 AddSpellSwitch("佯攻")

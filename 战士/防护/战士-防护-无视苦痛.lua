@@ -6,7 +6,7 @@ end
 if not #无视苦痛#:ReadyIn(0.2) then
     return
 end
-local v = player.Buff:Get("无视苦痛").Value4
+local v = player.Buff:Get("无视苦痛").Value4 or 0
 if v > 30000 then
     return
 end

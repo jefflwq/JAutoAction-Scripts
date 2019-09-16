@@ -11,10 +11,9 @@ v = AoeFront(#冰锥术#, 8, 140, 10, 0.65, 3, 3) if v then return v end
 run("更新咒术洪流层数")
 v = CastOnTarget(#彗星风暴#, talent["彗星风暴"] and (vars["咒术洪流层数"] > 3 or not talent["咒术洪流"]) and (targetRange < 10 or target:IsCasting() or target:IsChannaling() or not UnitIsUnit("targettarget", "player"))) if v then return v end
 v = run("冰枪术") if v then return v end
-if SwitchIsOn("寒冰宝珠") then
-    v = run("寒冰宝珠") if v then return v end
-end
-v = AoeAtCursor(#~暴风雪#, 8, 10, 0.65, 3, (SwitchIsOn("暴风雪") and talent["冰冻之雨"]) and 1 or 3, true, true, true, player.Buff:Has("冰冻之雨")) if v and v ~= 0 then return v end
+v = SwitchIsOn("寒冰宝珠") and run("寒冰宝珠") if v then return v end
+
+v = SwitchIsOn("暴风雪") and AoeAtCursor(#~暴风雪#, 8, 10, 0.65, 3, talent["冰冻之雨"] and 1 or 3, true, true, true, player.Buff:Has("冰冻之雨")) if v and v ~= 0 then return v end
 v = run("寒冰箭斩杀") if v then return v end
 v = run("冰川尖刺") if v then return v end
 v = run("冰风暴") if v then return v end

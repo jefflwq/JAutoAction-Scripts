@@ -8,6 +8,8 @@ else
     vars["胜利追击"] = #乘胜追击#
 end
 
+AddPriorMacro("集结呐喊")
+AddSpellSwitch("集结呐喊")
 
 AddCharactorMacro("取消防御", "INV_MISC_QUESTIONMARK", "#showtooltip 防御姿态\\n/cancelaura 防御姿态")
 AddPriorMacro("破胆怒吼")

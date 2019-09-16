@@ -13,7 +13,7 @@ AddCommonSwitch("饰品2")
 AddCommonSwitch("治疗石")
 AddCommonSwitch("打爆炸物")
 if player:GetDuty() == "HEALER" then
-    AddCommonSwitch("切换友方")
+    AddCommonSwitch("切换友方", "J友", "护甲技能")
 end
 DeleteMacro("J切友")
 DeleteMacro("J切")

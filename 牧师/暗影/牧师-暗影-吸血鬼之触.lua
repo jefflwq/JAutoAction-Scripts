@@ -4,7 +4,7 @@ if NeedRefill(target.Debuff:Get("吸血鬼之触"):GetTimeLeft(), 6, target:Time
 else
     if SwitchIsOn("切敌痛触") then
         if TabForDebuff("吸血鬼之触", 6) then
-            return CastMacro(&切换敌方&)
+            v = unitSelector:SelectAEnemy(true) if v then return v end
         end
     end
 end

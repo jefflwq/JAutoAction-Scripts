@@ -7,3 +7,5 @@ AddPriorMacro("自然之愈")
 
 AddSpellSwitch("百花齐放")
 AddSpellSwitch("野性成长")
+AddPriorMacro("宁静")
+AddPriorMacro("野性成长")

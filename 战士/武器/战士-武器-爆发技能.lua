@@ -4,9 +4,11 @@ if not force and not run("需要开爆发吗") then
     return
 end
 local v
-v = CastNoTarget(#天神下凡#, targetRange < 5 and vars["怒气差"] > 25) if v then return v end
-if talent["天神下凡"] and not player.Buff:Has("天神下凡") then
-    return
+if talent["天神下凡"] then
+    v = CastNoTarget(#天神下凡#, targetRange < 5 and vars["怒气差"] > 25) if v then return v end
+    if not player.Buff:Has("天神下凡") then
+        return
+    end
 end
 
 v = CastNoTarget(vars["药水"], vars["药水"] and boss.Exists or false) if v then return v end

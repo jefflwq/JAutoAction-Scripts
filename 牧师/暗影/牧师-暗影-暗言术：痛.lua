@@ -6,7 +6,7 @@ end
 if not NeedRefill(target.Debuff:Get("暗言术：痛"):GetTimeLeft(), 4.5, target:TimeToDie(), 8) then
     if SwitchIsOn("切敌痛触") then
         if TabForDebuff("暗言术：痛", 4.5) then
-            return CastMacro(&切换敌方&)
+            v = unitSelector:SelectAEnemy(true) if v then return v end
         end
     end
     return

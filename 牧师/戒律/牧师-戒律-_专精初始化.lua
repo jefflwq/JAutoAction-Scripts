@@ -12,9 +12,3 @@ AddSpellSwitch("驱散魔法")
 AddPriorMacro("纯净术")
 AddPriorMacro("驱散魔法")
 
---vars["打爆炸物技能"] = 
---{
---    #真言术：慰#, 
---    #惩击#, 
---    #苦修#, 
---}
