@@ -1,6 +1,5 @@
 --牧师-神圣-治疗
 local v
-local n = UnitDebuff("player", 2) if n then print(n) end
 v = HealSingle(#_圣言术：静#, vars["治疗对象血量"] < 0.5, true) if v then return v end
 UpdateReduce("target")
 v = HealTarget(#守护之魂#, vars["治疗对象血量"] < 0.3 and (vars["治疗对象血量"] < 0.2 or vars["当前减伤"] < 0.19)) if v then return v end

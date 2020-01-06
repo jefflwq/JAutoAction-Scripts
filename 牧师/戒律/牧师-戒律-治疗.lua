@@ -1,6 +1,5 @@
 --牧师-戒律-治疗
 local v
-vars["救赎数量"] = GetFriendBuffCount("救赎", 40)
 
 if vars["治疗对象血量"] < 0.3 and vars["治疗对象"] == target and not UnitIsUnit("target", "player") then
     UpdateReduce("target")
@@ -12,6 +11,7 @@ v = HealAroundCursor(#~真言术：障#, 10, nil, 0.5, nil, not talent["微光�
 
 v = HealAround(#微光屏障#, 40, 0.65, nil, SwitchIsOn("输出爆发") and talent["微光屏障"]) if v then return v end
 v = HealAround(#全神贯注#, 40, 0.7, nil, SwitchIsOn("输出爆发")) if v then return v end
+vars["救赎数量"] = GetFriendBuffCount("救赎", 40)
 v = CastNoTarget(#福音#, vars["40码平均血量"] < 0.85 and talent["福音"] and SwitchIsOn("输出爆发") and vars["40码人数"] > 2 and vars["救赎数量"] > vars["40码人数"] * 0.7) if v then return v end
 v = AoeFront(#神圣新星#, 24, 30, 24, 0.6, 3, 1, talent["神圣之星"]) if v then return v end
 v = HealSingle(#_苦修#, vars["治疗对象血量"] < 0.75 and (talent["幡然悔悟"] or player:IsMoving()), true) if v then return v end

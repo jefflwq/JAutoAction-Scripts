@@ -5,13 +5,15 @@ v = CastOnTarget(#牺牲祝福#, targetHealthPercent < 0.4 and not UnitIsUnit("t
 v = CastNoTarget(#神圣复仇者#, vars["团血危急"] and talent["神圣复仇者"] and not player.Buff:Has("复仇十字军") and (vars["40码平均血量"] < 0.5 or not player.Buff:Has("复仇之怒"))) if v then return v end
 v = CastNoTarget(#光环掌握#, vars["团血危急"]) if v then return v end
 
-if vars["团血危急"] and (vars["40码平均血量"] < 0.45 or not player.Buff:Has("神圣复仇者")) then
+if vars["团血危急"] and not player.Buff:Has("复仇之怒") and (vars["40码平均血量"] < 0.45 or not player.Buff:Has("神圣复仇者")) then
     if talent["复仇十字军"] then
         v = CastNoTarget(#复仇十字军#, targetRange < 5)
     else
         v = CastNoTarget(#复仇之怒#)
     end
 end
+v = HealSingle(#_神圣震击#, vars["治疗对象血量"] < 0.3) if v then return v end
+v = CastNoTarget(#美德道标#, vars["40码平均血量"] < 0.8 and talent["美德道标"]) if v then return v end
 
 if vars["治疗对象血量"] < 0.6 then
     v = HealSingle(#_神圣震击#) if v then return v end
@@ -21,7 +23,6 @@ if vars["治疗对象血量"] < 0.6 then
 end
 v = HealSingle(#_神圣震击#, vars["治疗对象血量"] < 0.8 or (vars["治疗对象血量"] < 0.85 and player:IsMoving())) if v then return v end
 v = HealFront(#黎明之光#, 15, 90, 0.9, 3) if v then return v end
-v = CastNoTarget(#美德道标#, vars["40码平均血量"] < 0.8 and talent["美德道标"]) if v then return v end
 v = CastOnTarget(#殉道者之光#, targetHealthPercent < 0.4 and not UnitIsUnit("target", "player") and target:CanBeAssisted() and (playerHealthPercent > 0.4 or player.Buff:Has("圣盾术"))) if v then return v end
 v = CastNoTarget(#律法之则#, talent["律法之则"] and ((vars["40码平均血量"] < 0.7 or vars["治疗对象血量"] < 0.5) or ((vars["40码平均血量"] < 0.9 or vars["治疗对象血量"] < 0.7) and #律法之则#:GetChargeInfo():IsReachedOrSoon()))) if v then return v end
 v = HealSingle(#_赋予信仰#, talent["赋予信仰"] and vars["治疗对象血量"] < 0.85) if v then return v end

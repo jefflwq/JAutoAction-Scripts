@@ -18,7 +18,14 @@ end
 if not InCombatLockdown() then
     return
 end
+--if SwitchIsOn("仇敌之血") and run("仇敌之血可用") then
+--	return CastNoTarget(#艾泽拉斯之心精华#)
+--end
 
+if player.Buff:Has("沸腾怒气") then
+    v = CastOnTarget(#正中眉心#, vars["连击点差"] == 0) if v then return v end
+	v = CastOnTarget(#手枪射击#, vars["连击点差"] >= 1 and player.Buff:Has("可乘之机")) if v then return v end
+end
 v = CastOnTarget(#毒刃#, UnitIsPlayer("target")) if v then return v end
 
 v = CastOnTarget(#死亡标记#, vars["连击点差"] > 3 and talent["死亡标记"]) if v then return v end
